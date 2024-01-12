@@ -11,7 +11,13 @@ Click on button on the right of the search engine
 
 Scenario:  Display 5 links directly to prowly website the content of related information to the query using precise style
 
-Given I am on copitol side
+Given I am on copilot side
 When I write a question: „Podaj jak najwięcej informacji o module monitoring mediów w prowly” 
 And I choose precise style
 Then I see result 5 acive links directly to prowly website about title: Tworzenie projektu, Tworzenie zapytania, Rodzaje informacji do monitorowania, Ustawiania słów kluczowych, Filtrowanie wzmianek.
+
+Scenario: Display an error message in the query
+Given I am on copilot side
+When I write a question: “modu monitoring mediów prowly”
+Then I see message “Przepraszam nie rozumiem zapytania”
+And I see no results related with query
