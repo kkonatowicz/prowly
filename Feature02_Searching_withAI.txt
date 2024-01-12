@@ -21,3 +21,9 @@ Given I am on copilot side
 When I write a question: “modu monitoring mediów prowly”
 Then I see message “Przepraszam nie rozumiem zapytania”
 And I see no results related with query
+
+Scenario: Display one link directly to prowly website the content of related information to the query using balanced style
+Given I am copilot  side
+When I write a question:”moduł monitoring mediów prowly”  
+And I choose balanced style
+Then I see result text about the topic which I asked and only one active link to prowly website
