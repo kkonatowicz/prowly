@@ -1,16 +1,17 @@
 
-Feature: Searching using  „Prowly Media Monitoring”
+Feature: Searching using „Prowly Media Monitoring” with AI copilot
 
 As a not logged into microsoft account web surfer. I want to search phrase „Prowly Media Monitoring” by using bing.com 
 
 Background: 
 I use Google Chrome browser
+I am in bing.com page
+Click on button on the right of the search engine
 
-Scenario: Searching phrase "Prowly Media Monitoring" without any extra filters
 
-Given I am in bing.com page
-When the search phrase "Prowly Media Monitoring" is entered
-Then first results include "Prowly Media Monitoring" websites links
-And second related results include two words from "Prowly Media Monitoring" is websites links
-And another related results include only one word from "Prowly Media Monitoring" is  website links
-And number of results greater than zero
+Scenario:  Display 5 links directly to prowly website the content of related information to the query using precise style
+
+Given I am on copitol side
+When I write a question: „Podaj jak najwięcej informacji o module monitoring mediów w prowly” 
+And I choose precise style
+Then I see result 5 acive links directly to prowly website about title: Tworzenie projektu, Tworzenie zapytania, Rodzaje informacji do monitorowania, Ustawiania słów kluczowych, Filtrowanie wzmianek.
