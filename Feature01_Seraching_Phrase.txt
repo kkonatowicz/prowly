@@ -1,0 +1,16 @@
+
+Feature: Searching using  „Prowly Media Monitoring”
+
+As a not logged into microsoft account web surfer. I want to search phrase „Prowly Media Monitoring” by using bing.com 
+
+Background: 
+I use Google Chrome browser
+
+Scenario: Display of results include "Prowly Media Monitoring" without any extra filters
+
+Given I am in bing.com page
+When the search phrase "Prowly Media Monitoring" is entered and click enter
+Then first results include "Prowly Media Monitoring" websites links
+And second related results include two words from "Prowly Media Monitoring" is websites links
+And another related results include only one word from "Prowly Media Monitoring" is  website links
+And number of results greater than zero
