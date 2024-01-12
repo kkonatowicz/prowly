@@ -16,7 +16,7 @@ And another related results include only one word from "Prowly Media Monitoring"
 And number of results greater than zero
 
 
-Scenario: Display of results include "Prowly Media Monitoring" with video filtr only
+Scenario: Display of results include "Prowly Media Monitoring" with video filter only
 
 Given I am in bing.com page
 When the search phrase "Prowly Media Monitoring" is entered and click enter
@@ -26,3 +26,17 @@ And second related results include two words from "Prowly Media Monitoring" vide
 And another related results include one word from "Prowly Media Monitoring" video
 And number of results greater than zero
 And results include only video
+
+Scenario Outline: Display of results include "Prowly Media Monitoring" with add video filter and extra filter
+
+Given I am in bing.com page
+When the search <phrase> is entered and <category> is entered and <filtr> is entered
+Then <result>
+And number of results greater than zero
+And results include only video
+ 
+Examples:
+|phrase                  |category   |filtr        |result                                                   |
+| Prowly Media Monitoring|video      |length:short |Results are shorter than 5 minutes                       |
+| Prowly Media Monitoring|video      |length:medium|Results are longer than 5 minutes shorter than 20 minutes|
+| Prowly Media Monitoring|video      |length:long  |Results are longer than 20 minutes                       |
